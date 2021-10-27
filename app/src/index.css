@@ -1,0 +1,11 @@
+.form-control:focus {
+  border-color: #FB7600;
+  box-shadow: none;
+}
+
+.navItem-style {
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: "poppins", sans-serif;
+  color: #333,
+}
