@@ -9,13 +9,15 @@ import { Link } from 'react-router-dom'
 import "../../index.css"
 
 export default function NavItem() {
+  const navItem = "navItem-style font-style text-decoration-none"
+
   return (
     <Nav className="ms-auto">
       <Nav.Link href="#">
-        <Link to="/category" className="navItem-style text-decoration-none" style={{ color: "#333" }}>Kategori</Link>
+        <Link to="/category" className={navItem} style={{ color: "#333" }}>Kategori</Link>
       </Nav.Link>
       <Nav.Link href="#">
-        <Link to="/favourite" className="navItem-style text-decoration-none" style={{ color: "#333" }}>Favorit</Link>
+        <Link to="/favourite" className={navItem} style={{ color: "#333" }}>Favorit</Link>
       </Nav.Link>
       {/* <Form className="d-flex">
         <FormControl

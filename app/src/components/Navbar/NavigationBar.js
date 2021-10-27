@@ -7,10 +7,10 @@ import "../../index.css"
 export default function NavigationBar() {
   return (
     <>
-      <Navbar collapseOnSelect sticky="top" expand="md" bg="light" variant="light">
+      <Navbar collapseOnSelect sticky="top" expand="md" variant="light" style={{ backgroundColor: "#E9EDF1" }}>
         <Container>
           <Navbar.Brand href="#">
-            <Link to="/" className="navItem-style text-decoration-none" style={{ color: "#FB7600" }}>Mau<span style={{ color: "#87A99C" }}>Masak</span></Link>
+            <Link to="/" className="navItem-style font-style text-decoration-none" style={{ color: "#FB7600" }}>Mau<span style={{ color: "#87A99C" }}>Masak</span></Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
