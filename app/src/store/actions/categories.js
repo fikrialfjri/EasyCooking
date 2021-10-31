@@ -32,14 +32,13 @@ export function fetchCategoriesAsync() {
     try {
       const categories = await API({
         method: "GET",
-        url: "/list.php?c=list"
+        url: "/categories.php"
       })
 
-      dispatch(setCategories(categories.data.meals))
+      dispatch(setCategories(categories.data.categories))
       dispatch(setLoading(false))
     } catch (error) {
       dispatch(setError(error))
-      console.log(error);
     }
   }
 }
