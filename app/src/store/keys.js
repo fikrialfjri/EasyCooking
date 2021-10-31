@@ -1,3 +1,3 @@
-export const SET_RECIPES = "recipes/setRecipes"
-export const SET_RECIPES_LOADING = "recipes/setLoading"
-export const SET_RECIPES_ERROR = "recipes/setError"
+export const SET_CATEGORIES = "categories/setCategories"
+export const SET_CATEGORIES_LOADING = "categories/setLoading"
+export const SET_CATEGORIES_ERROR = "categories/setError"

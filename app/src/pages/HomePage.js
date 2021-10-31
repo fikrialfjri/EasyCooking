@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchRecipesAsync } from '../store/actions/recipes'
+import { fetchCategoriesAsync } from '../store/actions/categories'
 import {
   Header,
-  Recipes
+  Categories
 } from '../components'
 
 export default function HomePage() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchRecipesAsync())
+    dispatch(fetchCategoriesAsync())
   }, [])
 
   return (
     <>
       <Header />
-      <Recipes />
+      <Categories />
     </>
   )
 }

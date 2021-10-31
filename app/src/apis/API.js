@@ -1,9 +1,8 @@
 import axios from 'axios'
-const corsIssue = "https://cors-anywhere.herokuapp.com"
-const masakapahariiniAPI = `${corsIssue}/https://masak-apa-tomorisakura.vercel.app/`
+const mealDbAPI = 'https://www.themealdb.com/api/json/v1/1'
 
 const API = axios.create({
-  baseURL: masakapahariiniAPI,
+  baseURL: mealDbAPI,
 });
 
 export default API;

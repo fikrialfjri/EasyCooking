@@ -1,6 +1,6 @@
 import { combineReducers } from "redux"
-import recipesReducer from "./recipesReducer"
+import categoriesReducer from "./categoriesReducer"
 
 export const reducer = combineReducers({
-  recipesState: recipesReducer
+  recipesState: categoriesReducer
 })
