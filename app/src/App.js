@@ -4,7 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import {
   HomePage,
   KategoriPage,
-  FavoritPage
+  FavoritPage,
+  RecipesByCategoryPage
 } from './pages';
 
 export default function App() {
@@ -20,6 +21,9 @@ export default function App() {
         </Route>
         <Route path="/favourite">
           <FavoritPage />
+        </Route>
+        <Route path="/recipes/filter-by-category=:categoryName">
+          <RecipesByCategoryPage />
         </Route>
       </Switch>
     </>

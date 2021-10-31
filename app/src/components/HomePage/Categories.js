@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { CategoryCard } from '..';
 
 export default function Categories() {
-  const { categories, loading, error } = useSelector(state => state.recipesState)
+  const { categories, loading, error } = useSelector(state => state.categoriesState)
 
   if (error) {
     <h1>Something error...</h1>
