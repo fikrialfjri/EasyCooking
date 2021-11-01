@@ -76,4 +76,19 @@ export function fetchRecipesByAreaAsync(areaName) {
   }
 }
 
+export function fetchRecipeAsync(idMeal) {
+  return async function (dispatch) {
+    dispatch(setLoading(true))
+    try {
+      const recipeDetail = await API({
+        method: "GET",
+        url: `/lookup.php?i=${idMeal}`
+      })
 
+      dispatch(setRecipe(recipeDetail.data.meals))
+      dispatch(setLoading(false))
+    } catch (error) {
+      dispatch(setError(error))
+    }
+  }
+}
