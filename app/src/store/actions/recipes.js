@@ -29,12 +29,14 @@ export function setError(payload) {
 export function fetchRecipesByCategoryAsync(categoryName) {
   return async function (dispatch) {
     dispatch(setLoading(true))
+    console.log(categoryName, ">>>>>");
     try {
       const recipesByCategory = await API({
         method: "GET",
         url: `/filter.php?c=${categoryName}`
       })
 
+      console.log(recipesByCategory.data, "??????");
       dispatch(setRecipesByCategory(recipesByCategory.data.meals))
       dispatch(setLoading(false))
     } catch (error) {
