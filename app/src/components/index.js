@@ -6,3 +6,4 @@ export { default as Categories } from "./HomePage/Categories"
 export { default as CategoryCard } from "./HomePage/CategoryCard"
 
 export { default as RecipeByCategoryCard } from "./RecipesByCategoryPage/RecipeCard"
+export { default as RecipeByAreaCard } from "./RecipesByAreaPage/RecipeCard"
