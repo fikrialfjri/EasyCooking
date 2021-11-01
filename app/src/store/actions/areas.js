@@ -1,41 +1,41 @@
 import {
-  SET_RECIPES_BY_CATEGORY,
-  SET_LOADING,
-  SET_ERROR
+  SET_AREAS,
+  SET_AREAS_LOADING,
+  SET_AREAS_ERROR
 } from "../keys";
 import API from "../../apis/API"
 
-export function setRecipesByCategory(payload) {
+export function setAreas(payload) {
   return {
-    type: SET_RECIPES_BY_CATEGORY,
+    type: SET_AREAS,
     payload
   }
 }
 
 export function setLoading(payload) {
   return {
-    type: SET_LOADING,
+    type: SET_AREAS_LOADING,
     payload
   }
 }
 
 export function setError(payload) {
   return {
-    type: SET_ERROR,
+    type: SET_AREAS_ERROR,
     payload
   }
 }
 
-export function fetchRecipesByCategoryAsync(categoryName) {
+export function fetchAreasAsync() {
   return async function (dispatch) {
     dispatch(setLoading(true))
     try {
-      const recipesByCategory = await API({
+      const areas = await API({
         method: "GET",
-        url: `/filter.php?c=${categoryName}`
+        url: "/list.php?a=list"
       })
 
-      dispatch(setRecipesByCategory(recipesByCategory.data.meals))
+      dispatch(setAreas(areas.data.meals))
       dispatch(setLoading(false))
     } catch (error) {
       dispatch(setError(error))
