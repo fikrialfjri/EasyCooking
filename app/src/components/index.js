@@ -7,3 +7,4 @@ export { default as CategoryCard } from "./HomePage/CategoryCard"
 
 export { default as RecipeByCategoryCard } from "./RecipesByCategoryPage/RecipeCard"
 export { default as RecipeByAreaCard } from "./RecipesByAreaPage/RecipeCard"
+export { default as RecipeDetailCard } from "./RecipeDetailPage/RecipeDetailCard"
