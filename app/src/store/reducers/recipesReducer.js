@@ -1,6 +1,7 @@
 import {
   SET_RECIPES_BY_CATEGORY,
   SET_RECIPES_BY_AREAS,
+  SET_RECIPE,
   SET_LOADING,
   SET_ERROR
 } from "../keys";
@@ -8,6 +9,7 @@ import {
 const initialState = {
   recipesByCategory: [],
   recipesByArea: [],
+  recipe: [],
   loading: false,
   error: null
 }
@@ -19,6 +21,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, recipesByCategory: payload }
     case SET_RECIPES_BY_AREAS:
       return { ...state, recipesByArea: payload }
+    case SET_RECIPE:
+      return { ...state, recipe: payload }
     case SET_LOADING:
       return { ...state, loading: payload }
     case SET_ERROR:
