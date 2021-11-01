@@ -21,7 +21,7 @@ export default function RecipesByCategoryPage() {
   return (
     <div className="container">
       <div className="text-center my-3">
-        <h1>Recipe List By Category {`> ${areaName}`}</h1>
+        <h1>Recipe List By Area {`> ${areaName}`}</h1>
       </div>
       {
         loading ? <h1>Loading...</h1> : (
