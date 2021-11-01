@@ -7,5 +7,6 @@ export const SET_AREAS_LOADING = "areas/setLoading"
 export const SET_AREAS_ERROR = "areas/setError"
 
 export const SET_RECIPES_BY_CATEGORY = "recipesByCategory/setRecipesByCategory"
+export const SET_RECIPES_BY_AREAS = "recipesByAreas/setRecipesByAreas"
 export const SET_LOADING = "loading/setLoading"
 export const SET_ERROR = "error/setError"
