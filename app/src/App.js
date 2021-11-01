@@ -3,9 +3,9 @@ import { NavigationBar } from './components'
 import { Switch, Route } from "react-router-dom";
 import {
   HomePage,
-  KategoriPage,
-  FavoritPage,
-  RecipesByCategoryPage
+  FavouritePage,
+  RecipesByCategoryPage,
+  RecipesByAreaPage
 } from './pages';
 
 export default function App() {
@@ -16,14 +16,14 @@ export default function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/category">
-          <KategoriPage />
-        </Route>
         <Route path="/favourite">
-          <FavoritPage />
+          <FavouritePage />
         </Route>
         <Route path="/recipes/filter-by-category=:categoryName">
           <RecipesByCategoryPage />
+        </Route>
+        <Route path="/recipes/filter-by-area=:areaName">
+          <RecipesByAreaPage />
         </Route>
       </Switch>
     </>
