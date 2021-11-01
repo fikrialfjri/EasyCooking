@@ -157,7 +157,7 @@ export default function RecipeDetailCard() {
                   <h3 className="fs-5 fw-bold mb-3" style={{ color: "#333" }}>Video Tutorial</h3>
                   {
                     el.strYoutube ? (
-                      <YouTube videoId={youtubeId(el.strYoutube)} opts={opts} onReady={(e) => e.target.pauseVideo} />
+                      <YouTube videoId={youtubeId(el.strYoutube)} opts={opts} onReady={(e) => e.target.stopVideo()} />
                     ) : (
                       <div className="text-center">
                         <Image src="https://s3.amazonaws.com/images.seroundtable.com/youtube-404-1409831247.png" alt="Not Found" fluid />
