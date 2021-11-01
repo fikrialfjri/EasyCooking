@@ -61,86 +61,86 @@ export default function RecipeDetailCard() {
                       <div className="d-flex">
                         <ul className="me-4">
                           {
-                            el.strMeasure1.length !== 0 && el.strIngredient1.length !== 0 ? (
+                            el.strMeasure1?.length !== 0 && el.strMeasure1 && el.strIngredient1?.length !== 0 && el.strIngredient1 ? (
                               <li>{el.strMeasure1} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient1}</span></li>
                             ) : null
                           }{
-                            el.strMeasure2.length !== 0 && el.strIngredient2.length !== 0 ? (
+                            el.strMeasure2?.length !== 0 && el.strMeasure2 && el.strIngredient2?.length !== 0 && el.strIngredient2 ? (
                               <li>{el.strMeasure2} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient2}</span></li>
                             ) : null
                           }{
-                            el.strMeasure3.length !== 0 && el.strIngredient3.length !== 0 ? (
+                            el.strMeasure3?.length !== 0 && el.strMeasure3 && el.strIngredient3?.length !== 0 && el.strIngredient3 ? (
                               <li>{el.strMeasure3} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient3}</span></li>
                             ) : null
                           }{
-                            el.strMeasure4.length !== 0 && el.strIngredient4.length !== 0 ? (
+                            el.strMeasure4?.length !== 0 && el.strMeasure4 && el.strIngredient4?.length !== 0 && el.strIngredient4 ? (
                               <li>{el.strMeasure4} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient4}</span></li>
                             ) : null
                           }{
-                            el.strMeasure5.length !== 0 && el.strIngredient5.length !== 0 ? (
+                            el.strMeasure5?.length !== 0 && el.strMeasure5 && el.strIngredient5?.length !== 0 && el.strIngredient5 ? (
                               <li>{el.strMeasure5} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient5}</span></li>
                             ) : null
                           }{
-                            el.strMeasure6.length !== 0 && el.strIngredient6.length !== 0 ? (
+                            el.strMeasure6?.length !== 0 && el.strMeasure6 && el.strIngredient6?.length !== 0 && el.strIngredient6 ? (
                               <li>{el.strMeasure6} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient6}</span></li>
                             ) : null
                           }{
-                            el.strMeasure7.length !== 0 && el.strIngredient7.length !== 0 ? (
+                            el.strMeasure7?.length !== 0 && el.strMeasure7 && el.strIngredient7?.length !== 0 && el.strIngredient7 ? (
                               <li>{el.strMeasure7} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient7}</span></li>
                             ) : null
                           }{
-                            el.strMeasure8.length !== 0 && el.strIngredient8.length !== 0 ? (
+                            el.strMeasure8?.length !== 0 && el.strMeasure8 && el.strIngredient8?.length !== 0 && el.strIngredient8 ? (
                               <li>{el.strMeasure8} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient8}</span></li>
                             ) : null
                           }{
-                            el.strMeasure9.length !== 0 && el.strIngredient9.length !== 0 ? (
+                            el.strMeasure9?.length !== 0 && el.strMeasure9 && el.strIngredient9?.length !== 0 && el.strIngredient9 ? (
                               <li>{el.strMeasure9} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient9}</span></li>
                             ) : null
                           }{
-                            el.strMeasure10.length !== 0 && el.strIngredient10.length !== 0 ? (
+                            el.strMeasure10?.length !== 0 && el.strMeasure10 && el.strIngredient10?.length !== 0 && el.strIngredient10 ? (
                               <li>{el.strMeasure10} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient10}</span></li>
                             ) : null
                           }
                         </ul>
                         <ul>
                           {
-                            el.strMeasure11.length !== 0 && el.strIngredient11.length !== 0 ? (
+                            el.strMeasure11?.length !== 0 && el.strMeasure11 && el.strIngredient11?.length !== 0 && el.strIngredient11 ? (
                               <li>{el.strMeasure11} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient11}</span></li>
                             ) : null
                           }{
-                            el.strMeasure12.length !== 0 && el.strIngredient12.length !== 0 ? (
+                            el.strMeasure12?.length !== 0 && el.strMeasure12 && el.strIngredient12?.length !== 0 && el.strIngredient12 ? (
                               <li>{el.strMeasure12} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient12}</span></li>
                             ) : null
                           }{
-                            el.strMeasure13.length !== 0 && el.strIngredient13.length !== 0 ? (
+                            el.strMeasure13?.length !== 0 && el.strMeasure13 && el.strIngredient13?.length !== 0 && el.strIngredient13 ? (
                               <li>{el.strMeasure13} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient10}</span></li>
                             ) : null
                           }{
-                            el.strMeasure14.length !== 0 && el.strIngredient14.length !== 0 ? (
+                            el.strMeasure14?.length !== 0 && el.strMeasure14 && el.strIngredient14?.length !== 0 && el.strIngredient14 ? (
                               <li>{el.strMeasure14} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient14}</span></li>
                             ) : null
                           }{
-                            el.strMeasure15.length !== 0 && el.strIngredient15.length !== 0 ? (
+                            el.strMeasure15?.length !== 0 && el.strMeasure15 && el.strIngredient15?.length !== 0 && el.strIngredient15 ? (
                               <li>{el.strMeasure15} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient15}</span></li>
                             ) : null
                           }{
-                            el.strMeasure16.length !== 0 && el.strIngredient16.length !== 0 ? (
+                            el.strMeasure16?.length !== 0 && el.strMeasure16 && el.strIngredient16?.length !== 0 && el.strIngredient16 ? (
                               <li>{el.strMeasure16} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient16}</span></li>
                             ) : null
                           }{
-                            el.strMeasure17.length !== 0 && el.strIngredient17.length !== 0 ? (
+                            el.strMeasure17?.length !== 0 && el.strMeasure17 && el.strIngredient17?.length !== 0 && el.strIngredient17 ? (
                               <li>{el.strMeasure17} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient17}</span></li>
                             ) : null
                           }{
-                            el.strMeasure18.length !== 0 && el.strIngredient18.length !== 0 ? (
+                            el.strMeasure18?.length !== 0 && el.strMeasure18 && el.strIngredient18?.length !== 0 && el.strIngredient18 ? (
                               <li>{el.strMeasure18} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient18}</span></li>
                             ) : null
                           }{
-                            el.strMeasure19.length !== 0 && el.strIngredient19.length !== 0 ? (
+                            el.strMeasure19?.length !== 0 && el.strMeasure19 && el.strIngredient19?.length !== 0 && el.strIngredient19 ? (
                               <li>{el.strMeasure19} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient19}</span></li>
                             ) : null
                           }{
-                            el.strMeasure20.length !== 0 && el.strIngredient20.length !== 0 ? (
+                            el.strMeasure20?.length !== 0 && el.strMeasure20 && el.strIngredient20?.length !== 0 && el.strIngredient20 ? (
                               <li>{el.strMeasure20} <span className="fw-bolder" style={{ color: "#333" }}>{el.strIngredient20}</span></li>
                             ) : null
                           }
@@ -153,14 +153,19 @@ export default function RecipeDetailCard() {
                   <h3 className="fs-5 fw-bold" style={{ color: "#333" }}>Instructions</h3>
                   <div>{el.strInstructions}</div>
                 </div>
-                {
-                  el.strYoutube ? (
-                    <div className="mb-3">
-                      <h3 className="fs-5 fw-bold mb-3" style={{ color: "#333" }}>Video Tutorial</h3>
+                <div className="mb-3">
+                  <h3 className="fs-5 fw-bold mb-3" style={{ color: "#333" }}>Video Tutorial</h3>
+                  {
+                    el.strYoutube ? (
                       <YouTube videoId={youtubeId(el.strYoutube)} opts={opts} />
-                    </div>
-                  ) : null
-                }
+                    ) : (
+                      <div className="text-center">
+                        <Image src="https://s3.amazonaws.com/images.seroundtable.com/youtube-404-1409831247.png" alt="Not Found" fluid />
+                        <h4>Not Found Youtube Video</h4>
+                      </div>
+                    )
+                  }
+                </div>
               </>
             )
           })
