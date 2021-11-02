@@ -1,6 +1,7 @@
 import {
   SET_RECIPES_BY_CATEGORY,
-  SET_RECIPES_BY_AREAS,
+  SET_RECIPES_BY_AREA,
+  SET_RECIPES_BY_POPULAR_RECIPE,
   SET_RECIPE,
   SET_LOADING,
   SET_ERROR
@@ -16,7 +17,14 @@ export function setRecipesByCategory(payload) {
 
 export function setRecipesByArea(payload) {
   return {
-    type: SET_RECIPES_BY_AREAS,
+    type: SET_RECIPES_BY_AREA,
+    payload
+  }
+}
+
+export function setRecipesByPopularRecipe(payload) {
+  return {
+    type: SET_RECIPES_BY_POPULAR_RECIPE,
     payload
   }
 }
@@ -69,6 +77,24 @@ export function fetchRecipesByAreaAsync(areaName) {
       })
 
       dispatch(setRecipesByArea(recipesByArea.data.meals))
+      dispatch(setLoading(false))
+    } catch (error) {
+      dispatch(setError(error))
+    }
+  }
+}
+
+export function fetchRecipesByPopularRecipeAsync(recipeIngredient) {
+  return async function (dispatch) {
+    dispatch(setLoading(true))
+    try {
+      const recipesByPopularRecipe = await API({
+        method: "GET",
+        url: `/filter.php?i=${recipeIngredient}`
+      })
+
+
+      dispatch(setRecipesByPopularRecipe(recipesByPopularRecipe.data.meals))
       dispatch(setLoading(false))
     } catch (error) {
       dispatch(setError(error))
