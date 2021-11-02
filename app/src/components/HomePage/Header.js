@@ -15,12 +15,12 @@ export default function Header() {
           <div className="col-6 position-relative" style={{ bottom: "-90px" }}>
             <div className="position-absolute">
               <div className="header-info mb-4">
-                <h1 className="fw-bold">Temukan Resep Masakan Favoritmu</h1>
-                <p className="fs-5">Membantu kamu menemukan resep masakan untuk membuat hidangan yang lezat</p>
+                <h1 className="fw-bold">Let's Start Cooking With Popular Recipes</h1>
+                <p className="fs-5">Helping you cook a variety of dishes from all over the world</p>
               </div>
               <div className="search-box rounded-1 position-absolute col-12 shadow" style={{ backgroundColor: "white", width: "130%" }}>
                 <div className="p-3">
-                  <h3 className="fs-6">Cari Resep</h3>
+                  <h3 className="fs-6">Search Recipe</h3>
                   <Form className="d-flex position-relative align-items-center">
                     <FormControl
                       type="search"

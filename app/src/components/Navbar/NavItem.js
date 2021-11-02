@@ -38,7 +38,7 @@ export default function NavItem() {
             return (
               <NavDropdown.Item href="#">
                 <Link
-                  to={`/recipes/filter-by-category=${category.strCategory}`}
+                  to={`/recipes/category=${category.strCategory}`}
                   style={{ color: "#333", textDecoration: "none", display: "block" }}
                 >
                   {category.strCategory}
@@ -59,7 +59,7 @@ export default function NavItem() {
             return (
               <NavDropdown.Item href="#">
                 <Link
-                  to={`/recipes/filter-by-area=${area.strArea}`}
+                  to={`/recipes/area=${area.strArea}`}
                   style={{ color: "#333", textDecoration: "none", display: "block" }}
                 >
                   {area.strArea}

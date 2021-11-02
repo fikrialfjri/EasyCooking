@@ -9,4 +9,5 @@ export { default as PopularRecipeCard } from "./HomePage/PopularRecipeCard"
 
 export { default as RecipeByCategoryCard } from "./RecipesByCategoryPage/RecipeCard"
 export { default as RecipeByAreaCard } from "./RecipesByAreaPage/RecipeCard"
+export { default as RecipeByPopularRecipeCard } from "./RecipesByPopularRecipePage/RecipeCard"
 export { default as RecipeDetailCard } from "./RecipeDetailPage/RecipeDetailCard"
