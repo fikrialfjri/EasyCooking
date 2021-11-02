@@ -12,7 +12,7 @@ export default function RecipesByCategoryPage() {
 
   useEffect(() => {
     dispatch(fetchRecipesByCategoryAsync(categoryName))
-  }, [])
+  }, [dispatch, categoryName])
 
   if (error) {
     return <h1>Something error...</h1>

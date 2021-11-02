@@ -19,7 +19,7 @@ export default function NavItem() {
   useEffect(() => {
     dispatch(fetchCategoriesAsync())
     dispatch(fetchAreasAsync())
-  }, [])
+  }, [dispatch])
 
   return (
     <Nav
