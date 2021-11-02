@@ -13,7 +13,7 @@ export default function RecipeDetailPage() {
 
   useEffect(() => {
     dispatch(fetchRecipeAsync(idMeal))
-  }, [])
+  }, [dispatch, idMeal])
 
   return (
     <div className="mt-3">

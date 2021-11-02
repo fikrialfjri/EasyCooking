@@ -11,7 +11,7 @@ export default function HomePage() {
 
   useEffect(() => {
     dispatch(fetchCategoriesAsync())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
