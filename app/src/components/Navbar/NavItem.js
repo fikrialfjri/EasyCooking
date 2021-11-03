@@ -23,7 +23,7 @@ export default function NavItem() {
 
   return (
     <Nav
-      className="ms-auto align-items-center align-items-md-center align-items-sm-start"
+      className="ms-auto align-items-start align-items-md-center"
       style={{ maxHeight: '300px' }}
       navbarScroll
     >
