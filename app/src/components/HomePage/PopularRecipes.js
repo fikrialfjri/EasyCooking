@@ -51,7 +51,7 @@ export default function PopularRecipes() {
               next={() => fetchMoreData()}
               hasMore={true}
               loader={
-                <Button className="button rounded-0 w-100 fw-bold" onClick={() => fetchMoreData("next")}>
+                <Button className="button rounded-0 w-100 fw-bold m-0" onClick={() => fetchMoreData("next")}>
                   Load More
                 </Button>
               }
