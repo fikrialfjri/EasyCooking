@@ -10,7 +10,7 @@ export default function RecipeCard({ recipe }) {
         style={{ color: "#333", textDecoration: "none" }}
       >
         <Image className="rounded-2" src={recipe.strMealThumb} fluid />
-        <h1 className="fs-5 text-center mt-1">{recipe.strMeal}</h1>
+        <h3 className="fs-5 text-center mt-1">{recipe.strMeal}</h3>
       </Link>
     </div>
   )

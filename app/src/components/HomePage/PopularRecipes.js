@@ -7,27 +7,24 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 export default function PopularRecipes() {
   const { ingredients, loading, error } = useSelector(state => state.ingredientsState)
 
-  console.log(ingredients.length);
-
-  const newIngredients = ingredients.slice(0, 20)
   const [state, setState] = useState({
-    items: newIngredients
+    items: []
   })
-
-  console.log(state.items.length, ">>>>>>");
 
   const fetchMoreData = (value) => {
     if (state.items.length === 0) {
       setState({
-        items: state.items.concat(ingredients.slice(state.items.length, state.items.length + 20))
+        items: state.items.concat(ingredients.slice(state.items.length, state.items.length + 9))
       });
     } else if (value === "next") {
       setTimeout(() => {
-        state.items.length <= 560 ? setState({
-          items: state.items.concat(ingredients.slice(state.items.length, state.items.length + 20))
-        }) : setState({
-          items: state.items.concat(ingredients.slice(state.items.length, ingredients.length))
-        })
+        state.items.length <= 560
+          ? setState({
+            items: state.items.concat(ingredients.slice(state.items.length, state.items.length + 9))
+          })
+          : setState({
+            items: state.items.concat(ingredients.slice(state.items.length, ingredients.length))
+          })
       }, 500);
     }
   };
@@ -51,11 +48,14 @@ export default function PopularRecipes() {
               next={() => fetchMoreData()}
               hasMore={true}
               loader={
-                <Button className="button rounded-0 w-100 fw-bold" onClick={() => fetchMoreData("next")}>
+                <Button
+                  className="button rounded-0 w-100 fw-bold m-0 rounded-2"
+                  onClick={() => fetchMoreData("next")}
+                >
                   Load More
                 </Button>
               }
-              className="m-0 p-0"
+              className="m-0 p-0 overflow-hidden"
               scrollableTarget="scrollableDiv"
             >
               <div className="row">

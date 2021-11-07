@@ -23,13 +23,12 @@ export default function NavItem() {
 
   return (
     <Nav
-      className="ms-auto align-items-center align-items-md-center align-items-sm-start"
+      className="ms-auto align-items-start align-items-md-center"
       style={{ maxHeight: '300px' }}
       navbarScroll
     >
       <NavDropdown
-        className={`${navItem}`}
-        style={{ color: "#333", maxHeight: "100px" }}
+        className={navItem}
         title="Category"
         id="navbarScrollingDropdown"
       >
@@ -50,7 +49,6 @@ export default function NavItem() {
       </NavDropdown>
       <NavDropdown
         className={navItem}
-        style={{ color: "#333" }}
         title="Area"
         id="navbarScrollingDropdown"
       >
