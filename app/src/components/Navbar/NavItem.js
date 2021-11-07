@@ -28,8 +28,7 @@ export default function NavItem() {
       navbarScroll
     >
       <NavDropdown
-        className={`${navItem}`}
-        style={{ color: "#333", maxHeight: "100px" }}
+        className={navItem}
         title="Category"
         id="navbarScrollingDropdown"
       >
@@ -50,7 +49,6 @@ export default function NavItem() {
       </NavDropdown>
       <NavDropdown
         className={navItem}
-        style={{ color: "#333" }}
         title="Area"
         id="navbarScrollingDropdown"
       >
