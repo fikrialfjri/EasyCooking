@@ -15,7 +15,30 @@ export default function Categories() {
       <h1 className="fs-1 mb-3">Category List</h1>
       {
         loading ? <h4>Loading...</h4> : (
-          <OwlCarousel className='owl-theme row' margin={23} responsiveClass={true} nav navText={["ᐊ", "ᐅ"]} dots={false} callbacks={false}>
+          <OwlCarousel
+            className='owl-theme row'
+            margin={23}
+            responsiveClass
+            navText={["ᐊ", "ᐅ"]}
+            loop
+            callbacks={false}
+            responsive={{
+              0: {
+                items: 1,
+                dots: false,
+                nav: true
+              },
+              576: {
+                items: 2
+              },
+              768: {
+                items: 3
+              },
+              1400: {
+                items: 5
+              }
+            }}
+          >
             {
               categories.map((category, i) => {
                 return (

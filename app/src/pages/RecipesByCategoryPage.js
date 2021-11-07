@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchRecipesByCategoryAsync } from '../store/actions/recipes'
-import { RecipeByCategoryCard } from '../components'
+import { RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
 
 export default function RecipesByCategoryPage() {
@@ -30,7 +30,7 @@ export default function RecipesByCategoryPage() {
               {
                 recipesByCategory.map((recipe) => {
                   return (
-                    <RecipeByCategoryCard
+                    <RecipeCard
                       key={recipe.idMeal}
                       recipe={recipe}
                     />
