@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchRecipesByAreaAsync } from '../store/actions/recipes'
 import { RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
+import { NotFoundPage } from '.'
 
 export default function RecipesByCategoryPage() {
   const { areaName } = useParams()
@@ -20,25 +21,33 @@ export default function RecipesByCategoryPage() {
 
   return (
     <div className="container">
-      <div className="text-center my-3">
-        <h1>Meal by Area {`> ${areaName}`}</h1>
-      </div>
       {
-        loading ? <h1>Loading...</h1> : (
-          <CardGroup>
-            <div className="row">
-              {
-                recipesByArea.map((recipe) => {
-                  return (
-                    <RecipeCard
-                      key={recipe.idMeal}
-                      recipe={recipe}
-                    />
-                  )
-                })
-              }
+        recipesByArea ? (
+          <>
+            <div className="text-center my-3">
+              <h1>Meal by Area {`> ${areaName}`}</h1>
             </div>
-          </CardGroup>
+            {
+              loading ? <h1>Loading...</h1> : (
+                <CardGroup>
+                  <div className="row">
+                    {
+                      recipesByArea.map((recipe) => {
+                        return (
+                          <RecipeCard
+                            key={recipe.idMeal}
+                            recipe={recipe}
+                          />
+                        )
+                      })
+                    }
+                  </div>
+                </CardGroup>
+              )
+            }
+          </>
+        ) : (
+          <NotFoundPage />
         )
       }
     </div>

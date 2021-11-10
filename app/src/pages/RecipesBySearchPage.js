@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
 import { fetchRecipesBySearchAsync } from '../store/actions/recipes'
+import { NotFoundPage } from '.'
 
 export default function RecipesByCategoryPage() {
   const { inputMeal } = useParams()
@@ -20,25 +21,33 @@ export default function RecipesByCategoryPage() {
 
   return (
     <div className="container">
-      <div className="text-center my-3">
-        <h1>Meal by Search {`> ${inputMeal}`}</h1>
-      </div>
       {
-        loading ? <h1>Loading...</h1> : (
-          <CardGroup>
-            <div className="row">
-              {
-                recipesBySearch.map((recipe) => {
-                  return (
-                    <RecipeCard
-                      key={recipe.idMeal}
-                      recipe={recipe}
-                    />
-                  )
-                })
-              }
+        recipesBySearch ? (
+          <>
+            <div className="text-center my-3">
+              <h1>Meal by Search {`> ${inputMeal}`}</h1>
             </div>
-          </CardGroup>
+            {
+              loading ? <h1>Loading...</h1> : (
+                <CardGroup>
+                  <div className="row">
+                    {
+                      recipesBySearch.map((recipe) => {
+                        return (
+                          <RecipeCard
+                            key={recipe.idMeal}
+                            recipe={recipe}
+                          />
+                        )
+                      })
+                    }
+                  </div>
+                </CardGroup>
+              )
+            }
+          </>
+        ) : (
+          <NotFoundPage />
         )
       }
     </div>
