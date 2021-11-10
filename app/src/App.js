@@ -7,7 +7,8 @@ import {
   RecipesByCategoryPage,
   RecipesByAreaPage,
   RecipeDetailPage,
-  RecipesByPopularRecipePage
+  RecipesByPopularRecipePage,
+  RecipesBySearchPage
 } from './pages';
 
 export default function App() {
@@ -29,6 +30,9 @@ export default function App() {
         </Route>
         <Route path="/recipes/popular-recipe=:recipeIngredient">
           <RecipesByPopularRecipePage />
+        </Route>
+        <Route path="/recipes/search=:inputMeal">
+          <RecipesBySearchPage />
         </Route>
         <Route path="/recipe/:idMeal">
           <RecipeDetailPage />

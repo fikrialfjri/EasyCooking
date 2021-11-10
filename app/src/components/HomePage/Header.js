@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import foodImg from "../../assets/img/header-food.png"
+import { Link } from 'react-router-dom'
 import {
   Form,
   FormControl,
@@ -9,6 +10,12 @@ import {
 } from "react-bootstrap"
 
 export default function Header() {
+  const [input, setInput] = useState("")
+
+  const handleInput = (value) => {
+    setInput(value)
+  }
+
   return (
     <>
       <div className="d-block d-md-none d-lg-none d-xl-none d-xxl-none" style={{ backgroundColor: "#E9EDF1" }} >
@@ -35,9 +42,25 @@ export default function Header() {
                         placeholder="Search"
                         className="me-2 form-control"
                         aria-label="Search"
+                        value={input}
+                        onChange={(e) => handleInput(e.target.value)}
                       />
                       <div className="button-search">
-                        <Button className="button rounded-0">Search</Button>
+                        {
+                          input.length === 0
+                            ? <Button
+                              className="button rounded-0"
+                              disabled
+                            >
+                              Search
+                            </Button>
+                            : <Link
+                              to={`/recipes/search=${input}`}
+                              className="btn button rounded-0"
+                            >
+                              Search
+                            </Link>
+                        }
                       </div>
                     </Form>
                   </div>
@@ -51,9 +74,25 @@ export default function Header() {
                         placeholder="Search"
                         className="me-2 form-control"
                         aria-label="Search"
+                        value={input}
+                        onChange={(e) => handleInput(e.target.value)}
                       />
                       <div className="button-search">
-                        <Button className="button rounded-0">Search</Button>
+                        {
+                          input.length === 0
+                            ? <Button
+                              className="button rounded-0"
+                              disabled
+                            >
+                              Search
+                            </Button>
+                            : <Link
+                              to={`/recipes/search=${input}`}
+                              className="btn button rounded-0"
+                            >
+                              Search
+                            </Link>
+                        }
                       </div>
                     </Form>
                   </div>

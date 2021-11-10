@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchRecipesByCategoryAsync } from '../store/actions/recipes'
 import { RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
+import { fetchRecipesBySearchAsync } from '../store/actions/recipes'
 
 export default function RecipesByCategoryPage() {
-  const { categoryName } = useParams()
+  const { inputMeal } = useParams()
   const dispatch = useDispatch()
-  const { recipesByCategory, loading, error } = useSelector(state => state.recipesState)
+  const { recipesBySearch, loading, error } = useSelector(state => state.recipesState)
 
   useEffect(() => {
-    dispatch(fetchRecipesByCategoryAsync(categoryName))
-  }, [dispatch, categoryName])
+    dispatch(fetchRecipesBySearchAsync(inputMeal))
+  }, [dispatch, inputMeal])
 
   if (error) {
     return <h1>Something error...</h1>
@@ -21,14 +21,14 @@ export default function RecipesByCategoryPage() {
   return (
     <div className="container">
       <div className="text-center my-3">
-        <h1>Meal by Category {`> ${categoryName}`}</h1>
+        <h1>Meal by Search {`> ${inputMeal}`}</h1>
       </div>
       {
         loading ? <h1>Loading...</h1> : (
           <CardGroup>
             <div className="row">
               {
-                recipesByCategory.map((recipe) => {
+                recipesBySearch.map((recipe) => {
                   return (
                     <RecipeCard
                       key={recipe.idMeal}
