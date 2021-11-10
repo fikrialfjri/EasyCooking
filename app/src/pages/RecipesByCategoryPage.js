@@ -25,7 +25,7 @@ export default function RecipesByCategoryPage() {
         recipesByCategory ? (
           <>
             <div className="text-center my-3">
-              <h1>Meal by Category {`> ${categoryName.toUpperCase()}`}</h1>
+              <h1>Meals by Category {`> ${categoryName.toUpperCase()}`}</h1>
             </div>
             {
               loading ? <h1>Loading...</h1> : (

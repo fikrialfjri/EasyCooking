@@ -30,8 +30,8 @@ export default function RecipesByCategoryPage() {
             <div className="text-center my-3">
               {
                 inputMeal.length === 1
-                  ? <h1>Meal by First Letter {`> ${inputMeal.toUpperCase()}`}</h1>
-                  : <h1>Meal by Search {`> ${inputMeal.toUpperCase()}`}</h1>
+                  ? <h1>Meals by First Letter {`> ${inputMeal.toUpperCase()}`}</h1>
+                  : <h1>Meals by Search {`> ${inputMeal.toUpperCase()}`}</h1>
               }
             </div>
             {
