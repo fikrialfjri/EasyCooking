@@ -128,6 +128,24 @@ export function fetchRecipesBySearchAsync(recipeIngredient) {
   }
 }
 
+export function fetchRecipesByFirstLetterAsync(recipeIngredient) {
+  return async function (dispatch) {
+    dispatch(setLoading(true))
+    try {
+      const recipesByFirstLetter = await API({
+        method: "GET",
+        url: `/search.php?f=${recipeIngredient}`
+      })
+
+
+      dispatch(setRecipesBySearch(recipesByFirstLetter.data.meals))
+      dispatch(setLoading(false))
+    } catch (error) {
+      dispatch(setError(error))
+    }
+  }
+}
+
 export function fetchRecipeAsync(idMeal) {
   return async function (dispatch) {
     dispatch(setLoading(true))

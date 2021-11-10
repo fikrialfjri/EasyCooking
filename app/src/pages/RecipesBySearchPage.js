@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
 import { fetchRecipesBySearchAsync } from '../store/actions/recipes'
+import { fetchRecipesByFirstLetterAsync } from '../store/actions/recipes'
 import { NotFoundPage } from '.'
 
 export default function RecipesByCategoryPage() {
@@ -12,7 +13,9 @@ export default function RecipesByCategoryPage() {
   const { recipesBySearch, loading, error } = useSelector(state => state.recipesState)
 
   useEffect(() => {
-    dispatch(fetchRecipesBySearchAsync(inputMeal))
+    inputMeal.length === 1
+      ? dispatch(fetchRecipesByFirstLetterAsync(inputMeal))
+      : dispatch(fetchRecipesBySearchAsync(inputMeal))
   }, [dispatch, inputMeal])
 
   if (error) {
@@ -25,7 +28,11 @@ export default function RecipesByCategoryPage() {
         recipesBySearch ? (
           <>
             <div className="text-center my-3">
-              <h1>Meal by Search {`> ${inputMeal}`}</h1>
+              {
+                inputMeal.length === 1
+                  ? <h1>Meal by First Letter {`> ${inputMeal.toUpperCase()}`}</h1>
+                  : <h1>Meal by Search {`> ${inputMeal.toUpperCase()}`}</h1>
+              }
             </div>
             {
               loading ? <h1>Loading...</h1> : (

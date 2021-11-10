@@ -25,7 +25,7 @@ export default function RecipesByPopularRecipePage() {
         recipesByPopularRecipe ? (
           <>
             <div className="text-center my-3">
-              <h1>Meal by Popular Recipe {`> ${recipeIngredient}`}</h1>
+              <h1>Meal by Popular Recipe {`> ${recipeIngredient.toUpperCase()}`}</h1>
             </div>
             {
               loading ? <h1>Loading...</h1> : (

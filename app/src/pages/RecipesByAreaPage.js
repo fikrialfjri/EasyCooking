@@ -25,7 +25,7 @@ export default function RecipesByCategoryPage() {
         recipesByArea ? (
           <>
             <div className="text-center my-3">
-              <h1>Meal by Area {`> ${areaName}`}</h1>
+              <h1>Meal by Area {`> ${areaName.toUpperCase()}`}</h1>
             </div>
             {
               loading ? <h1>Loading...</h1> : (
