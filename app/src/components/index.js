@@ -9,3 +9,5 @@ export { default as PopularRecipeCard } from "./HomePage/PopularRecipeCard"
 
 export { default as RecipeCard } from "./Recipes/RecipeCard"
 export { default as RecipeDetailCard } from "./Recipes/RecipeDetailCard"
+
+export { default as Footer } from "./Footer/Footer"

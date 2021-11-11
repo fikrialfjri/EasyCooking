@@ -5,7 +5,7 @@ import { fetchRecipeAsync } from '../store/actions/recipes'
 import {
   Container
 } from 'react-bootstrap'
-import { RecipeDetailCard } from '../components'
+import { Footer, RecipeDetailCard } from '../components'
 
 export default function RecipeDetailPage() {
   const { idMeal } = useParams()
@@ -16,10 +16,13 @@ export default function RecipeDetailPage() {
   }, [dispatch, idMeal])
 
   return (
-    <div className="mt-3">
-      <Container>
-        <RecipeDetailCard />
-      </Container>
-    </div>
+    <>
+      <div className="mt-3">
+        <Container>
+          <RecipeDetailCard />
+        </Container>
+      </div>
+      <Footer />
+    </>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
-import { RecipeCard } from '../components'
+import { Footer, RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
 import { fetchRecipesBySearchAsync } from '../store/actions/recipes'
 import { fetchRecipesByFirstLetterAsync } from '../store/actions/recipes'
@@ -23,40 +23,43 @@ export default function RecipesByCategoryPage() {
   }
 
   return (
-    <div className="container">
-      {
-        recipesBySearch ? (
-          <>
-            <div className="text-center my-3">
+    <>
+      <div className="container">
+        {
+          recipesBySearch ? (
+            <>
+              <div className="text-center my-3">
+                {
+                  inputMeal.length === 1
+                    ? <h1>Meals by First Letter {`> ${inputMeal.toUpperCase()}`}</h1>
+                    : <h1>Meals by Search {`> ${inputMeal.toUpperCase()}`}</h1>
+                }
+              </div>
               {
-                inputMeal.length === 1
-                  ? <h1>Meals by First Letter {`> ${inputMeal.toUpperCase()}`}</h1>
-                  : <h1>Meals by Search {`> ${inputMeal.toUpperCase()}`}</h1>
+                loading ? <h1>Loading...</h1> : (
+                  <CardGroup>
+                    <div className="row">
+                      {
+                        recipesBySearch.map((recipe) => {
+                          return (
+                            <RecipeCard
+                              key={recipe.idMeal}
+                              recipe={recipe}
+                            />
+                          )
+                        })
+                      }
+                    </div>
+                  </CardGroup>
+                )
               }
-            </div>
-            {
-              loading ? <h1>Loading...</h1> : (
-                <CardGroup>
-                  <div className="row">
-                    {
-                      recipesBySearch.map((recipe) => {
-                        return (
-                          <RecipeCard
-                            key={recipe.idMeal}
-                            recipe={recipe}
-                          />
-                        )
-                      })
-                    }
-                  </div>
-                </CardGroup>
-              )
-            }
-          </>
-        ) : (
-          <NotFoundPage />
-        )
-      }
-    </div>
+            </>
+          ) : (
+            <NotFoundPage />
+          )
+        }
+      </div>
+      <Footer />
+    </>
   )
 }
