@@ -2,6 +2,7 @@ import {
   SET_RECIPES_BY_CATEGORY,
   SET_RECIPES_BY_AREA,
   SET_RECIPES_BY_POPULAR_RECIPE,
+  SET_RECIPES_BY_SEARCH,
   SET_RECIPE,
   SET_LOADING,
   SET_ERROR
@@ -11,6 +12,7 @@ const initialState = {
   recipesByCategory: [],
   recipesByArea: [],
   recipesByPopularRecipe: [],
+  recipesBySearch: [],
   recipe: [],
   loading: false,
   error: null
@@ -25,6 +27,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, recipesByArea: payload }
     case SET_RECIPES_BY_POPULAR_RECIPE:
       return { ...state, recipesByPopularRecipe: payload }
+    case SET_RECIPES_BY_SEARCH:
+      return { ...state, recipesBySearch: payload }
     case SET_RECIPE:
       return { ...state, recipe: payload }
     case SET_LOADING:

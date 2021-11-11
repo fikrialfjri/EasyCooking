@@ -1,19 +1,22 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchRecipesByAreaAsync } from '../store/actions/recipes'
 import { RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
+import { fetchRecipesBySearchAsync } from '../store/actions/recipes'
+import { fetchRecipesByFirstLetterAsync } from '../store/actions/recipes'
 import { NotFoundPage } from '.'
 
 export default function RecipesByCategoryPage() {
-  const { areaName } = useParams()
+  const { inputMeal } = useParams()
   const dispatch = useDispatch()
-  const { recipesByArea, loading, error } = useSelector(state => state.recipesState)
+  const { recipesBySearch, loading, error } = useSelector(state => state.recipesState)
 
   useEffect(() => {
-    dispatch(fetchRecipesByAreaAsync(areaName))
-  }, [dispatch, areaName])
+    inputMeal.length === 1
+      ? dispatch(fetchRecipesByFirstLetterAsync(inputMeal))
+      : dispatch(fetchRecipesBySearchAsync(inputMeal))
+  }, [dispatch, inputMeal])
 
   if (error) {
     return <h1>Something error...</h1>
@@ -22,17 +25,21 @@ export default function RecipesByCategoryPage() {
   return (
     <div className="container">
       {
-        recipesByArea ? (
+        recipesBySearch ? (
           <>
             <div className="text-center my-3">
-              <h1>Meals by Area {`> ${areaName.toUpperCase()}`}</h1>
+              {
+                inputMeal.length === 1
+                  ? <h1>Meals by First Letter {`> ${inputMeal.toUpperCase()}`}</h1>
+                  : <h1>Meals by Search {`> ${inputMeal.toUpperCase()}`}</h1>
+              }
             </div>
             {
               loading ? <h1>Loading...</h1> : (
                 <CardGroup>
                   <div className="row">
                     {
-                      recipesByArea.map((recipe) => {
+                      recipesBySearch.map((recipe) => {
                         return (
                           <RecipeCard
                             key={recipe.idMeal}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchRecipesByPopularRecipeAsync } from '../store/actions/recipes'
 import { RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
+import { NotFoundPage } from '.'
 
 export default function RecipesByPopularRecipePage() {
   const { recipeIngredient } = useParams()
@@ -20,25 +21,33 @@ export default function RecipesByPopularRecipePage() {
 
   return (
     <div className="container">
-      <div className="text-center my-3">
-        <h1>Recipe List By Popular Recipe {`> ${recipeIngredient}`}</h1>
-      </div>
       {
-        loading ? <h1>Loading...</h1> : (
-          <CardGroup>
-            <div className="row">
-              {
-                recipesByPopularRecipe.map((recipe) => {
-                  return (
-                    <RecipeCard
-                      key={recipe.idMeal}
-                      recipe={recipe}
-                    />
-                  )
-                })
-              }
+        recipesByPopularRecipe ? (
+          <>
+            <div className="text-center my-3">
+              <h1>Meals by Popular Recipe {`> ${recipeIngredient.toUpperCase()}`}</h1>
             </div>
-          </CardGroup>
+            {
+              loading ? <h1>Loading...</h1> : (
+                <CardGroup>
+                  <div className="row">
+                    {
+                      recipesByPopularRecipe.map((recipe) => {
+                        return (
+                          <RecipeCard
+                            key={recipe.idMeal}
+                            recipe={recipe}
+                          />
+                        )
+                      })
+                    }
+                  </div>
+                </CardGroup>
+              )
+            }
+          </>
+        ) : (
+          <NotFoundPage />
         )
       }
     </div>
