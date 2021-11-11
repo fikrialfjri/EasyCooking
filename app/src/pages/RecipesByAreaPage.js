@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchRecipesByAreaAsync } from '../store/actions/recipes'
-import { RecipeCard } from '../components'
+import { Footer, RecipeCard } from '../components'
 import { CardGroup } from 'react-bootstrap'
+import { NotFoundPage } from '.'
 
 export default function RecipesByCategoryPage() {
   const { areaName } = useParams()
@@ -19,28 +20,39 @@ export default function RecipesByCategoryPage() {
   }
 
   return (
-    <div className="container">
-      <div className="text-center my-3">
-        <h1>Recipe List By Area {`> ${areaName}`}</h1>
-      </div>
-      {
-        loading ? <h1>Loading...</h1> : (
-          <CardGroup>
-            <div className="row">
+    <>
+      <div className="container">
+        {
+          recipesByArea ? (
+            <>
+              <div className="text-center my-3">
+                <h1>Meals by Area {`> ${areaName.toUpperCase()}`}</h1>
+              </div>
               {
-                recipesByArea.map((recipe) => {
-                  return (
-                    <RecipeCard
-                      key={recipe.idMeal}
-                      recipe={recipe}
-                    />
-                  )
-                })
+                loading ? <h1>Loading...</h1> : (
+                  <CardGroup>
+                    <div className="row">
+                      {
+                        recipesByArea.map((recipe) => {
+                          return (
+                            <RecipeCard
+                              key={recipe.idMeal}
+                              recipe={recipe}
+                            />
+                          )
+                        })
+                      }
+                    </div>
+                  </CardGroup>
+                )
               }
-            </div>
-          </CardGroup>
-        )
-      }
-    </div>
+            </>
+          ) : (
+            <NotFoundPage />
+          )
+        }
+      </div>
+      <Footer />
+    </>
   )
 }

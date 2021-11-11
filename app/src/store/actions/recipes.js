@@ -2,6 +2,7 @@ import {
   SET_RECIPES_BY_CATEGORY,
   SET_RECIPES_BY_AREA,
   SET_RECIPES_BY_POPULAR_RECIPE,
+  SET_RECIPES_BY_SEARCH,
   SET_RECIPE,
   SET_LOADING,
   SET_ERROR
@@ -25,6 +26,13 @@ export function setRecipesByArea(payload) {
 export function setRecipesByPopularRecipe(payload) {
   return {
     type: SET_RECIPES_BY_POPULAR_RECIPE,
+    payload
+  }
+}
+
+export function setRecipesBySearch(payload) {
+  return {
+    type: SET_RECIPES_BY_SEARCH,
     payload
   }
 }
@@ -95,6 +103,42 @@ export function fetchRecipesByPopularRecipeAsync(recipeIngredient) {
 
 
       dispatch(setRecipesByPopularRecipe(recipesByPopularRecipe.data.meals))
+      dispatch(setLoading(false))
+    } catch (error) {
+      dispatch(setError(error))
+    }
+  }
+}
+
+export function fetchRecipesBySearchAsync(recipeIngredient) {
+  return async function (dispatch) {
+    dispatch(setLoading(true))
+    try {
+      const recipesBySearch = await API({
+        method: "GET",
+        url: `/search.php?s=${recipeIngredient}`
+      })
+
+
+      dispatch(setRecipesBySearch(recipesBySearch.data.meals))
+      dispatch(setLoading(false))
+    } catch (error) {
+      dispatch(setError(error))
+    }
+  }
+}
+
+export function fetchRecipesByFirstLetterAsync(recipeIngredient) {
+  return async function (dispatch) {
+    dispatch(setLoading(true))
+    try {
+      const recipesByFirstLetter = await API({
+        method: "GET",
+        url: `/search.php?f=${recipeIngredient}`
+      })
+
+
+      dispatch(setRecipesBySearch(recipesByFirstLetter.data.meals))
       dispatch(setLoading(false))
     } catch (error) {
       dispatch(setError(error))

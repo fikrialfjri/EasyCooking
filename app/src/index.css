@@ -15,14 +15,17 @@
 }
 
 .button {
-  background-color: #FB7600;
+  background-color: #FB7600 !important;
   border: none;
   width: 130px;
   margin: 6px;
+  text-decoration: none;
+  color: white;
 }
 
 .button:hover {
-  background-color: #c46411;
+  color: white;
+  background-color: #c46411 !important;
 }
 
 .button:focus {

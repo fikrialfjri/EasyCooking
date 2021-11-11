@@ -5,7 +5,8 @@ import { fetchIngredientsAsync } from '../store/actions/ingredient'
 import {
   Header,
   Categories,
-  PopularRecipes
+  PopularRecipes,
+  Footer
 } from '../components'
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Header />
       <Categories />
       <PopularRecipes />
+      <Footer />
     </>
   )
 }
